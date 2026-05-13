@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【心動警報】Crush 經營學 - AzertEden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#fdfcf0',
+                            accent: '#ff8a8a',
+                            dark: '#2d3436',
+                            muted: '#f1f2f6',
+                            softBlue: '#a29bfe',
+                            softYellow: '#ffeaa7'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Gaegu', 'cursive'],
+                        body: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fdfcf0;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+        }
+
+        .hand-drawn-border {
+            border: 3px solid #2d3436;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(45, 52, 70, 0.1);
+        }
+
+        .paper-shadow {
+            box-shadow: 8px 8px 0px rgba(45, 52, 70, 0.1);
+        }
+
+        .scribble-underline {
+            position: relative;
+        }
+        .scribble-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 20' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q125,0 250,10 T500,10' fill='none' stroke='%23ff8a8a' stroke-width='4'/%3E%3C/svg%3E");
+            background-size: cover;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #fdfcf0;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ff8a8a;
+            border-radius: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="font-body text-brand-dark custom-scrollbar">
+
+    <!-- Header Section -->
+    <header class="relative pt-12 pb-6 px-6 max-w-4xl mx-auto text-center">
+        <div class="inline-block px-4 py-1 mb-4 text-sm font-bold tracking-widest uppercase bg-brand-softYellow hand-drawn-border transform -rotate-2">
+            B11208022 | AzertEden
+        </div>
+        <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight mb-8">
+            【心動警報】<br>
+            <span class="text-brand-accent">從心臟震盪到現實登陸</span>
+        </h1>
+        
+        <!-- Banner Container -->
+        <div class="relative group animate-float">
+            <div class="absolute -inset-2 bg-brand-softBlue opacity-20 rounded-[40px] blur-xl group-hover:opacity-30 transition duration-500"></div>
+            <div class="relative hand-drawn-border overflow-hidden bg-white paper-shadow transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                <img src='https://opal.google/board/blobs/52319329-1854-47b2-9ad8-b03541f5d590' alt='media_1' class="w-full h-auto object-cover" />
+            </div>
+            <!-- Decorative Elements -->
+            <div class="absolute -top-6 -left-6 w-16 h-16 bg-brand-softYellow rounded-full flex items-center justify-center hand-drawn-border animate-wiggle">
+                <span class="text-3xl">✨</span>
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-20 h-20 bg-brand-accent rounded-full flex items-center justify-center hand-drawn-border transform rotate-12">
+                <span class="text-3xl text-white font-display">Crush!</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-6 py-12 space-y-16">
+        
+        <!-- Introduction -->
+        <section class="relative">
+            <div class="glass-card p-8 rounded-3xl paper-shadow leading-relaxed text-lg">
+                <p class="mb-4">
+                    人類的語言系統非常有趣，我們習慣用「跌入（Fall in love）」來形容墜入愛河，彷彿那是一種不可抗拒的重力。然而，在真正進入穩定的愛戀之前，我們往往會先經歷一場場隱密而劇烈的心理活動，也就是我們現在常說的「Crush」。
+                </p>
+                <p>
+                    這篇文章想從一個知識份子的視視角，拆解這種「短暫而迷人的心臟地震」，並提供一份結合心理學、歷史與現代趨勢的攻略，幫你把那份「腦補式驚艷」，轉化為真實的關係連結。
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 1 -->
+        <section class="space-y-6">
+            <h2 class="font-display text-4xl font-bold inline-block scribble-underline">一、 那一秒的心臟震盪：解析你的「濾鏡時刻」</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-6">
+                <div class="bg-white p-6 hand-drawn-border paper-shadow transform -rotate-1">
+                    <p class="leading-relaxed">
+                        你一定有過這種經驗：在捷運轉乘的瞬間、或在咖啡廳敲擊鍵盤的午後，某個人的侧臉或一個拿起水瓶的動作，突然讓你的心跳漏了一拍。這種突如來的「大地震」，正是 Crush 的魔力所在。
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <p class="leading-relaxed">
+                        從認知心理學的角度看，Crush 其實是一種強大的「主觀美化」。當我們對一個陌生人產生好感時，大腦會自動完成剩下的拼圖。你會覺得他走路有風、喝水都帥，甚至連他發呆的模樣都充滿深意。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="bg-brand-softBlue/10 p-10 rounded-[50px] hand-drawn-border relative">
+            <div class="absolute -top-8 left-10 bg-brand-softBlue text-white px-6 py-2 font-display text-2xl hand-drawn-border">History</div>
+            <h2 class="font-display text-4xl font-bold mt-4 mb-6">二、 從「被粉碎」到「想脫單」：這個詞彙的生命史</h2>
+            <div class="prose prose-lg text-brand-dark max-w-none">
+                <p>
+                    為什麼我們用「壓碎（Crush）」這個詞來形容迷戀？這得追溯到 14 世紀。
+                </p>
+                <p class="mt-4">
+                    最早的「cruschen」指的是實質物理上的「粉碎、擠壓」。直到 19 世紀末，這個詞開始進入青少年俚語，用來形容那種因為過於迷戀，而感覺心臟被對方「佔領、擊碎」的窒息感。想像一下，那種明明想呼吸卻被情感塞滿的瞬間，是不是既痛苦又令人上癮？
+                </p>
+                <p class="mt-4 font-semibold italic text-brand-accent">
+                    「到了 2010 年代，Crush 代表了一種『我有權利隨時心動，也有權利隨時退場』的現代情感主權。」
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3 - Bento Grid style -->
+        <section class="space-y-8">
+            <h2 class="font-display text-4xl font-bold inline-block scribble-underline">三、 現代求愛攻略：心理學遇上社交軟體</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-brand-softYellow/30 p-6 rounded-3xl hand-drawn-border hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-2">📱</div>
+                    <h3 class="font-bold text-xl mb-2">熟悉感效應</h3>
+                    <p class="text-sm opacity-80">社群媒體是你的最強僚機。不用急著私訊，先從 IG 限動點讚開始，建立一種低壓力的「心理預期」。</p>
+                </div>
+                <div class="bg-brand-accent/10 p-6 rounded-3xl hand-drawn-border hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-2">🐚</div>
+                    <h3 class="font-bold text-xl mb-2">自我揭露</h3>
+                    <p class="text-sm opacity-80">適度分享「無傷大雅的弱點」，展現真實性。比起完美的機器人，人們更傾向於親近真實的人。</p>
+                </div>
+                <div class="bg-brand-softBlue/20 p-6 rounded-3xl hand-drawn-border hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-2">☕️</div>
+                    <h3 class="font-bold text-xl mb-2">低門檻見面</h3>
+                    <p class="text-sm opacity-80">正式晚餐壓力太大。試試咖啡約會或逛美術館，讓對話更自然、更無負擔。</p>
+                </div>
+                <div class="bg-brand-dark text-white p-6 rounded-3xl hand-drawn-border hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-2">🦋</div>
+                    <h3 class="font-bold text-xl mb-2 text-brand-softYellow">你若盛開</h3>
+                    <p class="text-sm opacity-80">與其鑽研如何「討好」，不如活出自己的魅力。專注於專業或愛好時發出的光芒最迷人。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="bg-white p-8 border-4 border-dashed border-brand-accent rounded-3xl">
+            <h2 class="font-display text-4xl font-bold mb-6 text-brand-accent">四、 真誠是必殺技：追求中的道德邊界</h2>
+            <div class="space-y-4">
+                <p class="flex items-start gap-4">
+                    <span class="bg-brand-accent text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0">!</span>
+                    <span>現代戀愛講求<strong>「同意原則（Consent）」</strong>。如果對方已經明顯冷處理，優雅轉身是你最後也最重要的魅力。</span>
+                </p>
+                <p class="flex items-start gap-4">
+                    <span class="bg-brand-accent text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0">!</span>
+                    <span>堅決拒絕 PUA 與任何形式的情感操縱。貶低（Negging）絕對換不來長久的情感，拒絕情緒勒索。</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="relative overflow-hidden bg-brand-dark text-white p-10 rounded-[60px] paper-shadow">
+            <div class="relative z-10">
+                <h2 class="font-display text-4xl font-bold mb-8 text-brand-softYellow">五、 未來預告：AI 幫你追，還是繼續活在幻想裡？</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="space-y-4">
+                        <p class="text-brand-muted/80">
+                            展望未來，科技與情感的交織將變得更複雜。AI 僚機可能導致「溝通同質化」，讓每個人聊起天來都像同一個範本。
+                        </p>
+                        <div class="p-4 bg-white/10 rounded-xl border border-white/20">
+                            <h4 class="font-bold text-brand-softBlue mb-1">Situationships</h4>
+                            <p class="text-xs">接受一種「比朋友多一點」的流動狀態。</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-brand-muted/80">
+                            Z 世代也正在重新定義關係，依附類型（Attachment Styles）的認知正在普及。在深入追求前，先搞清楚彼此的安全性，能有效避開有毒關係。
+                        </p>
+                        <div class="p-4 bg-white/10 rounded-xl border border-white/20">
+                            <h4 class="font-bold text-brand-accent mb-1">Delusionship</h4>
+                            <p class="text-xs">腦補式戀愛，一種自嘲式的幻想心理慰藉。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative background elements -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-brand-softBlue/20 rounded-full blur-3xl"></div>
+        </section>
+
+        <!-- Conclusion -->
+        <footer class="text-center pb-24">
+            <div class="inline-block relative">
+                <div class="absolute inset-0 bg-brand-softYellow transform -rotate-1 scale-110 rounded-lg -z-10"></div>
+                <h3 class="font-display text-4xl font-bold p-4">結語</h3>
+            </div>
+            <p class="mt-8 text-xl italic max-w-2xl mx-auto leading-relaxed">
+                "Crush 是一份禮物，它提醒我們還有「心動」的能力。不管這場迷戀最終是會化作一段穩定的關係，還是僅僅留在你的回憶裡，請享受那一刻的心跳。"
+            </p>
+            <div class="mt-12 flex justify-center gap-4">
+                <div class="w-12 h-1 hand-drawn-border bg-brand-accent"></div>
+                <div class="text-brand-accent font-display text-2xl animate-bounce">❤️</div>
+                <div class="w-12 h-1 hand-drawn-border bg-brand-accent"></div>
+            </div>
+            <p class="mt-4 font-display text-lg opacity-60">在乏味的世界裡，能有一個讓你大腦發燙的對象，本身就是一件很浪漫的事。</p>
+        </footer>
+
+    </main>
+
+    <!-- Floating UI Decorations -->
+    <div class="fixed top-20 -left-10 w-40 h-40 border-4 border-brand-accent opacity-10 rounded-full animate-float -z-10"></div>
+    <div class="fixed bottom-20 -right-10 w-60 h-60 border-4 border-brand-softBlue opacity-10 rounded-full animate-float -z-10" style="animation-delay: -2s;"></div>
+
+    <script>
+        // Simple micro-interactions
+        document.querySelectorAll('.hand-drawn-border').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.style.transform = 'scale(1.02) rotate(0deg)';
+                el.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = '';
+            });
+        });
+
+        // Intersection observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
