@@ -1,0 +1,437 @@
+
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學生專屬：MacBook Neo vs Air 怎麼選？</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        neo: {
+                            light: '#fce7f3', // Pink-100
+                            DEFAULT: '#ec4899', // Pink-500
+                            dark: '#be185d', // Pink-700
+                        },
+                        air: {
+                            light: '#f1f5f9', // Slate-100
+                            DEFAULT: '#64748b', // Slate-500
+                            dark: '#334155', // Slate-700
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 平滑滾動 */
+        html { scroll-behavior: smooth; }
+        /* 隱藏滾動條但保留功能 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="laptop" class="text-neo-DEFAULT"></i>
+                    <span class="font-bold text-xl tracking-tight">聽哥實測 <span class="text-sm font-normal text-gray-500">| 學生選機指南</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#comparison" class="text-gray-600 hover:text-neo-DEFAULT transition font-medium">機型比較</a>
+                    <a href="#pros-cons" class="text-gray-600 hover:text-neo-DEFAULT transition font-medium">優缺點分析</a>
+                    <a href="#buying-tips" class="text-gray-600 hover:text-neo-DEFAULT transition font-medium">規格建議</a>
+                    <a href="#faq" class="text-gray-600 hover:text-neo-DEFAULT transition font-medium">常見問答</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄區塊 (Hero) -->
+    <header class="pt-28 pb-16 px-4 text-center bg-gradient-to-b from-neo-light/50 to-transparent">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block py-1 px-3 rounded-full bg-neo-light text-neo-dark text-sm font-semibold mb-4">
+                2026 最新選購建議
+            </span>
+            <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                MacBook <span class="text-neo-DEFAULT">Neo</span> vs <span class="text-air-DEFAULT">Air (M5)</span><br>
+                學生到底該買哪一台？
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                身為長期使用 MacBook Air 的聽哥實測了兩週 Neo！如果你是學生、想要輕便打報告，還是接案創作者？這篇完整比較幫你把預算花在刀口上。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#comparison" class="bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-lg">
+                    看完整比較
+                </a>
+                <a href="#faq" class="bg-white text-gray-900 px-8 py-3 rounded-full font-medium border border-gray-200 hover:bg-gray-50 transition shadow-sm">
+                    直接看 QA
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 快速評估 (Interactive) -->
+    <section class="py-12 px-4 max-w-4xl mx-auto">
+        <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-neo-light rounded-bl-full -z-10 opacity-50"></div>
+            <h2 class="text-2xl font-bold mb-6 text-center">👇 你平時都怎麼用電腦？</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 學生/輕度選項 -->
+                <div class="group cursor-pointer border-2 border-transparent hover:border-neo-DEFAULT bg-gray-50 hover:bg-neo-light/20 p-6 rounded-2xl transition duration-300" onclick="showResult('neo')">
+                    <div class="w-12 h-12 bg-neo-light text-neo-DEFAULT rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">我是輕度使用者 / 學生</h3>
+                    <p class="text-gray-500 text-sm">主要寫報告、網拍、追劇、去咖啡廳處理簡單文書，偶爾剪點短影音 (TikTok/Reels)。</p>
+                </div>
+                
+                <!-- 重度/創作者選項 -->
+                <div class="group cursor-pointer border-2 border-transparent hover:border-air-DEFAULT bg-gray-50 hover:bg-air-light/50 p-6 rounded-2xl transition duration-300" onclick="showResult('air')">
+                    <div class="w-12 h-12 bg-air-light text-air-DEFAULT rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i data-lucide="video"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">我是重度使用者 / 創作者</h3>
+                    <p class="text-gray-500 text-sm">常開20+分頁、同時用 Photoshop、剪輯大專案、寫程式碼，或跑本地端 AI 模型。</p>
+                </div>
+            </div>
+
+            <div id="quiz-result" class="hidden mt-8 p-6 rounded-xl bg-gray-900 text-white text-center animate-fade-in">
+                <p class="text-xl font-bold mb-2" id="result-title">結果</p>
+                <p class="text-gray-300" id="result-desc">說明</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 機型與價格價值比較 (Table) -->
+    <section id="comparison" class="py-16 bg-white px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">機型全面比較</h2>
+                <p class="text-gray-500">規格差在哪？CP 值怎麼看？</p>
+            </div>
+
+            <div class="overflow-x-auto no-scrollbar pb-4">
+                <table class="w-full min-w-[600px] border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="p-4 text-left border-b-2 border-gray-100 text-gray-400 font-medium">功能規格</th>
+                            <th class="p-4 border-b-2 border-neo-DEFAULT text-center w-2/5">
+                                <div class="font-black text-2xl text-gray-900">MacBook Neo</div>
+                                <div class="text-neo-DEFAULT text-sm font-semibold mt-1">CP值殺手 / 青春粉色</div>
+                            </th>
+                            <th class="p-4 border-b-2 border-air-DEFAULT text-center w-2/5">
+                                <div class="font-black text-2xl text-gray-900">MacBook Air (M5)</div>
+                                <div class="text-air-DEFAULT text-sm font-semibold mt-1">專業旗艦 / 穩定生財</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 border-b border-gray-100 font-medium flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4"></i> 核心晶片</td>
+                            <td class="p-4 border-b border-gray-100 text-center">
+                                <strong>S8 Pro</strong><br>
+                                <span class="text-xs text-gray-500">iPhone 16 Pro 心臟<br>(爆發力強的短跑選手)</span>
+                            </td>
+                            <td class="p-4 border-b border-gray-100 text-center">
+                                <strong>M5 晶片</strong><br>
+                                <span class="text-xs text-gray-500">電腦級工作負載<br>(穩定的馬拉松跑者)</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition bg-gray-50/50">
+                            <td class="p-4 border-b border-gray-100 font-medium flex items-center gap-2"><i data-lucide="palette" class="w-4 h-4"></i> 外觀質感</td>
+                            <td class="p-4 border-b border-gray-100 text-center text-neo-dark">超吸睛一體成型粉色<br>(背蓋、腳墊、鍵盤、觸控板全粉)</td>
+                            <td class="p-4 border-b border-gray-100 text-center text-gray-600">經典專業工作機質感</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 border-b border-gray-100 font-medium flex items-center gap-2"><i data-lucide="mouse-pointer-2" class="w-4 h-4"></i> 觸控板與鍵盤</td>
+                            <td class="p-4 border-b border-gray-100 text-center">機械式觸控板<br><strong>無</strong>背光鍵盤</td>
+                            <td class="p-4 border-b border-gray-100 text-center">Force Touch 觸控板<br><strong>有</strong>背光鍵盤</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition bg-gray-50/50">
+                            <td class="p-4 border-b border-gray-100 font-medium flex items-center gap-2"><i data-lucide="monitor-up" class="w-4 h-4"></i> 外接擴充</td>
+                            <td class="p-4 border-b border-gray-100 text-center">支援單螢幕<br>Type-C 充電 (會佔用一孔)</td>
+                            <td class="p-4 border-b border-gray-100 text-center">支援雙螢幕<br>MagSafe 磁吸充電</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 border-b border-gray-100 font-medium flex items-center gap-2"><i data-lucide="bot" class="w-4 h-4"></i> AI 處理能力</td>
+                            <td class="p-4 border-b border-gray-100 text-center">適合輕度 (雲端、語音、照片優化)</td>
+                            <td class="p-4 border-b border-gray-100 text-center">適合中重度 (本地大模型、AI繪圖)</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition bg-neo-light/20">
+                            <td class="p-4 font-bold text-gray-800 flex items-center gap-2"><i data-lucide="shopping-bag" class="w-4 h-4 text-neo-DEFAULT"></i> 適合對象與價值</td>
+                            <td class="p-4 text-center text-neo-dark font-bold">預算有限的學生、作為備用機</td>
+                            <td class="p-4 text-center text-air-dark font-bold">接案創作者、追求用4-5年的人</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 優缺點分析 (Cards) -->
+    <section id="pros-cons" class="py-16 bg-gray-50 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">優缺點老實說</h2>
+                <p class="text-gray-500">沒有完美的電腦，只有最適合你的電腦</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Neo Card -->
+                <div class="bg-white rounded-3xl shadow-sm border border-neo-light p-8 hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-black text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="bg-neo-DEFAULT text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                        MacBook Neo
+                    </h3>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-green-600 flex items-center gap-2 mb-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5"></i> 為什麼該買？ (優點)
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-neo-DEFAULT mt-1">•</span> <strong>極致殺手級性價比</strong>，適合預算有限的學生。</li>
+                            <li class="flex items-start gap-2"><span class="text-neo-DEFAULT mt-1">•</span> <strong>外觀超美</strong>，一體成型的粉色在咖啡廳超搶眼。</li>
+                            <li class="flex items-start gap-2"><span class="text-neo-DEFAULT mt-1">•</span> <strong>輕便王者</strong>，隨時隨地打報告、回信的首選。</li>
+                            <li class="flex items-start gap-2"><span class="text-neo-DEFAULT mt-1">•</span> <strong>S8 Pro 爆發力強</strong>，開網頁、滑 App 瞬間反應極快。</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-red-500 flex items-center gap-2 mb-3">
+                            <i data-lucide="x-circle" class="w-5 h-5"></i> 要妥協什麼？ (缺點)
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> <strong>無背光鍵盤</strong>，昏暗環境下打字較不便。</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> 觸控板是<strong>傳統機械式</strong>，非 Apple 專利 Force Touch。</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> 充電佔用 Type-C 孔，且外接顯示器較保守 (單螢幕)。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Air Card -->
+                <div class="bg-white rounded-3xl shadow-sm border border-air-light p-8 hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-black text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="bg-air-DEFAULT text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                        MacBook Air (M5)
+                    </h3>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-green-600 flex items-center gap-2 mb-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5"></i> 為什麼該買？ (優點)
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-air-DEFAULT mt-1">•</span> <strong>頂級生產力工具</strong>，流暢度至少可戰 4 到 5 年。</li>
+                            <li class="flex items-start gap-2"><span class="text-air-DEFAULT mt-1">•</span> <strong>M5 晶片底氣足</strong>，長達10分鐘以上的 4K 算圖、修圖不降速。</li>
+                            <li class="flex items-start gap-2"><span class="text-air-DEFAULT mt-1">•</span> <strong>有 MagSafe</strong>，充電不佔用擴充孔，且支援雙螢幕輸出。</li>
+                            <li class="flex items-start gap-2"><span class="text-air-DEFAULT mt-1">•</span> <strong>配備 Force Touch</strong> 與背光鍵盤，體驗完整無閹割。</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-red-500 flex items-center gap-2 mb-3">
+                            <i data-lucide="x-circle" class="w-5 h-5"></i> 要妥協什麼？ (缺點)
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> <strong>價格相對較高</strong>，若是為了省錢不建議硬上。</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> 體積雖然輕薄，但比起 Neo 仍是偏向「工作小旗艦」的穩重感。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 容量與記憶體建議 -->
+    <section id="buying-tips" class="py-16 bg-white px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+                <!-- 裝飾背景 -->
+                <i data-lucide="hard-drive" class="absolute -bottom-10 -right-10 w-64 h-64 text-gray-700 opacity-20"></i>
+                
+                <h2 class="text-3xl font-bold mb-8">💡 買前必看：容量與記憶體避坑指南</h2>
+                
+                <div class="space-y-8 relative z-10">
+                    <!-- Storage -->
+                    <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <h3 class="text-xl font-bold text-neo-light mb-3 flex items-center gap-2">
+                            <i data-lucide="database"></i> 為什麼不建議買 256GB？ (強烈建議 512GB)
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            很多人為了便宜買 256GB，但聽哥實測發現：MacOS 系統更新（如 MacOS 16.5 Beta）往往需要 30GB 以上的可用空間。如果你習慣把資料存在電腦裡，256GB 很快就會滿，導致<strong>無法更新系統</strong>！
+                        </p>
+                        <div class="inline-block bg-neo-DEFAULT text-white px-4 py-2 rounded-lg text-sm font-bold">
+                            🔥 隱藏重點：Neo 的 256GB 版本沒有 Touch ID 指紋辨識！要買 512GB 才有！
+                        </div>
+                    </div>
+
+                    <!-- RAM -->
+                    <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <h3 class="text-xl font-bold text-air-light mb-3 flex items-center gap-2">
+                            <i data-lucide="memory-stick"></i> 8GB 記憶體到底夠不夠用？
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            如果你只開單一視窗寫報告、網拍，8GB 非常夠。但如果你習慣同時開 20 個分頁、LINE、Apple Music 甚至 Photoshop，8GB 會讓系統強制使用 SWAP (記憶體交換) 去讀寫 SSD，導致：
+                        </p>
+                        <ul class="mt-3 space-y-1 text-sm text-gray-400 pl-6 list-disc">
+                            <li>頻繁切換視窗時產生延遲</li>
+                            <li>增加 SSD 讀寫頻率，減少硬碟壽命</li>
+                            <li>兩三年後面對未來的 AI 落地應用會非常吃力</li>
+                        </ul>
+                        <p class="mt-4 text-white font-medium">👉 預算夠的話，創作者直上 Air 的 16GB 才能戰未來！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常見問答 (Accordion) -->
+    <section id="faq" class="py-16 bg-gray-50 px-4">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">網友 QA 有問必答</h2>
+                <p class="text-gray-500">彙整自聽哥影片粉絲提問</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- QA Item 1 -->
+                <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-lg text-gray-800">Q1：Neo 這麼便宜，我還需要買 Air 嗎？</span>
+                        <i data-lucide="chevron-down" class="text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-gray-600 border-t border-gray-100 pt-4">
+                        這取決於你的角色！如果你是學生、輕度文書使用者，只需要一台備用機隨時打報告，Neo 絕對是高 CP 值的殺手級機器。但如果你是接案內容創作者，長時間處理影像、使用 AI，MacBook Air (M5) 才是你不能省錢的賺錢工具。
+                    </div>
+                </div>
+
+                <!-- QA Item 2 -->
+                <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-lg text-gray-800">Q2：MacBook Neo 可以拿來剪輯影片嗎？</span>
+                        <i data-lucide="chevron-down" class="text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-gray-600 border-t border-gray-100 pt-4">
+                        有條件的可以！如果是處理 4K 剪輯短影音 (TikTok、Reels)，基本上完全沒問題。但如果專案變大、多軌道剪輯、加入特效與調色，想要穩定輸出就會讓你有點焦慮。
+                    </div>
+                </div>
+
+                <!-- QA Item 3 -->
+                <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-lg text-gray-800">Q3：Neo 的觸控板手感好像變了？</span>
+                        <i data-lucide="chevron-down" class="text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-gray-600 border-t border-gray-100 pt-4">
+                        沒錯！Apple 為了壓低價格做了調整。Neo 沒有採用 Air 上的 Force Touch (震動回饋專利)，而是採用類似傳統機械式的實體按鍵觸控板。雖然按下去有物理聲響，但仍比一般 Windows 筆電好用。
+                    </div>
+                </div>
+
+                <!-- QA Item 4 -->
+                <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-lg text-gray-800">Q4：我想玩 AI，這兩台跑得動嗎？</span>
+                        <i data-lucide="chevron-down" class="text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-gray-600 border-t border-gray-100 pt-4">
+                        分成三個等級：
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li><strong>輕度：</strong>用網頁版 ChatGPT、語音識別、照片優化，Neo (S8 Pro) 綽綽有餘。</li>
+                            <li><strong>中度：</strong>跑輔助工具、剪輯軟體 AI 降噪/摳圖，至少需要 16GB 記憶體，建議選 Air。</li>
+                            <li><strong>重度：</strong>跑本地端模型訓練、複雜 AI 繪圖，建議直上 32GB 記憶體以上的 M 系列晶片。</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- QA Item 5 -->
+                <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-lg text-gray-800">Q5：外接擴充槽能解決 Neo 的連接埠問題嗎？</span>
+                        <i data-lucide="chevron-down" class="text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-gray-600 border-t border-gray-100 pt-4">
+                        外接 Hub 可以解決讀卡、多 USB 需求，但<strong>無法解決螢幕限制與晶片效能</strong>。Neo (S8 Pro) 對外接顯示器較保守，僅支援單螢幕；若習慣筆電+外接螢幕的雙多工環境，Air (M5) 的原生架構還是比較好用，且 Air 有 MagSafe 不會佔用 Type-C 孔。
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="mb-2">資料來源：MacBook Neo vs M5 MacBook Air完整比較！學生、創作者、上班族到底該買誰？</p>
+            <p>© 2026 科技旅遊軍師 聽哥實測筆記. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // 啟用 Lucide Icons
+        lucide.createIcons();
+
+        // 快速評估互動邏輯
+        function showResult(type) {
+            const resultBox = document.getElementById('quiz-result');
+            const resultTitle = document.getElementById('result-title');
+            const resultDesc = document.getElementById('result-desc');
+
+            resultBox.classList.remove('hidden');
+            
+            if(type === 'neo') {
+                resultBox.className = "mt-8 p-6 rounded-xl text-center animate-fade-in bg-neo-light text-neo-dark border border-neo-DEFAULT";
+                resultTitle.innerHTML = '✨ 推薦：MacBook Neo (512GB)';
+                resultDesc.innerHTML = '你是性價比玩家！Neo 超級輕薄、外型絕美，絕對能滿足你的日常打報告與追劇需求。強烈建議選 512GB 版本以擁有 TouchID 和足夠的系統更新空間。';
+            } else {
+                resultBox.className = "mt-8 p-6 rounded-xl text-center animate-fade-in bg-air-dark text-white border border-air-DEFAULT";
+                resultTitle.innerHTML = '💼 推薦：MacBook Air M5 (16GB起)';
+                resultDesc.innerHTML = '你是專業生產力工作者！為了長遠的 4-5 年壽命、穩定的效能輸出以及更好的外接螢幕體驗，M5 晶片與 16GB 記憶體絕對是你的最佳投資。';
+            }
+        }
+
+        // 常見問答手風琴邏輯
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Toggle answer visibility
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+                button.parentElement.classList.add('border-neo-DEFAULT');
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+                button.parentElement.classList.remove('border-neo-DEFAULT');
+            }
+        }
+
+        // Tailwind 自訂動畫擴充 (直接寫在 script 標籤內套用)
+        tailwind.config.theme.extend.animation = {
+            'fade-in': 'fadeIn 0.5s ease-out'
+        }
+        tailwind.config.theme.extend.keyframes = {
+            fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+        }
+    </script>
+</body>
+</html>
